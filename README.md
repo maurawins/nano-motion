@@ -33,7 +33,7 @@ The app has no required environment variables. For a production deployment, conn
 ## OpenAI Ads Measurement Pixel
 
 - Pixel ID: `JbChK6ZzAdxdCN9vy6PKWR`.
-- SDK is loaded in `index.html`; consent is set to denied before initialization.
+- SDK is loaded in `index.html`; consent is set to denied before initialization. The saved visitor preference is applied before the first route is rendered and measured.
 - The demo consent banner lets a visitor accept or decline optional measurement. The preference is persisted locally.
 - This banner is a demonstration control, **not a certified consent-management platform** and not a legal determination for any market.
 - SDK debug mode is enabled for development and should be reviewed/disabled according to the production release process.
@@ -42,7 +42,7 @@ The app has no required environment variables. For a production deployment, conn
 
 | Event | Trigger in this demo | Why it matters |
 |---|---|---|
-| `page_viewed` | Every client-side route render | Measures site traffic and navigation context. |
+| `page_viewed` | Each client-side route or query-state navigation (not UI-only re-renders) | Measures site traffic and navigation context. |
 | `contents_viewed` | Product detail view and membership-plan view | Measures consideration of specific products and the membership offer. |
 | `items_added` | Quick-add, product add, or cart quantity increase | Captures product-level shopping intent. Decreases/removals do not count as adds. |
 | `checkout_started` | First entry into checkout for a checkout journey | Measures high-intent progression toward purchase; guarded against refresh duplicates. |
