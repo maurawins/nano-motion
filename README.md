@@ -45,9 +45,9 @@ The app has no required environment variables. For a production deployment, conn
 | `page_viewed` | Each client-side route or query-state navigation (not UI-only re-renders) | Measures site traffic and navigation context. |
 | `contents_viewed` | Product detail view and membership-plan view | Measures consideration of specific products and the membership offer. |
 | `items_added` | Quick-add, product add, or cart quantity increase | Captures product-level shopping intent. Decreases/removals do not count as adds. |
-| `checkout_started` | First entry into checkout for a checkout journey | Measures high-intent progression toward purchase; guarded against refresh duplicates. |
+| `checkout_started` | First entry into product checkout or Motion Club enrollment checkout for that journey | Measures high-intent progression toward purchase or membership; guarded against refresh duplicates. |
 | `order_created` | Valid demo checkout form submission, at the simulated order-confirmation boundary | Represents a completed demo purchase, not a real payment or fulfilled order. |
-| `subscription_created` | Visitor selects Join on the demo membership page | Represents simulated enrollment only; no payment method or recurring charge is created. |
+| `subscription_created` | Visitor completes the membership enrollment form with the designated test card and accepts the demo terms | Represents a completed simulated enrollment, not a payment-provider-confirmed subscription. No payment method is transmitted, stored, or charged. |
 
 ### Measurement conventions
 
@@ -69,7 +69,7 @@ Before launching in another market:
 
 ### Membership and lifecycle measurement
 
-The demo treats the initial Motion Club enrollment as a distinct conversion from a one-time ecommerce order. In production, fire `subscription_created` only after the billing provider confirms an active subscription—not on a button click. Keep plan IDs and billing currency stable.
+The demo treats the initial Motion Club enrollment as a distinct conversion from a one-time ecommerce order. The enrollment form simulates contact details, billing address, and test-card validation entirely in the browser; it does not authorize a payment, call a billing provider, persist personal/payment data, or create a recurring subscription. In production, fire `subscription_created` only after the billing provider confirms an active subscription—not on a button click. Keep plan IDs and billing currency stable.
 
 Renewals, failed payments, cancellations, pauses, refunds, and retention should be measured from the authoritative subscription/billing system in first-party analytics or a warehouse. Do not count a renewal as a new acquisition. Only add further Pixel events if they are supported by the current OpenAI documentation and mapped to a clearly defined business outcome.
 
@@ -88,7 +88,7 @@ Renewals, failed payments, cancellations, pauses, refunds, and retention should 
 
 ## Known limitations
 
-- Checkout, payment authorization, tax, shipping, inventory, customer identity, orders, and membership billing are simulated.
+- Checkout, payment authorization, tax, shipping, inventory, customer identity, orders, and membership billing are simulated. Membership enrollment includes contact, billing-address, and test-card fields for a realistic UX; the only accepted card is the documented demo number, and all form data stays in the browser and is not persisted or transmitted.
 - There is no backend or Conversions API integration.
 - The consent banner is not a certified CMP.
 - Product imagery is loaded from Unsplash and requires an internet connection.
