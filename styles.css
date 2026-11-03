@@ -6,3 +6,70 @@
 
 /* Review fixes: keep quick-add controls anchored to product imagery at all breakpoints. */
 @media(max-width:560px){.quick-add{bottom:88px}}
+
+
+/* Nano Motion art direction: a sharper, high-energy visual signature. */
+:root{--ink:#171b17;--muted:#70766d;--paper:#f5f5ef;--white:#fffefa;--line:#d9ddd2;--olive:#56634a;--acid:#d5f36a;--serif:Georgia,'Times New Roman',serif}
+.announcement{background:var(--acid);color:#171b17;font-weight:800}
+.site-header{background:#f5f5ef}
+.wordmark{letter-spacing:.16em}
+.wordmark span{color:#8aa83c}
+.hero{background:#1a211b}
+.hero-image{filter:brightness(.66) saturate(.82);object-position:center 43%}
+.hero:after{background:linear-gradient(90deg,rgba(10,17,12,.78) 0%,rgba(10,17,12,.38) 48%,rgba(10,17,12,.03) 100%)}
+.hero-content{left:9%;max-width:660px}
+.hero-content .eyebrow{color:var(--acid)}
+.hero h1{font-size:clamp(54px,7.8vw,104px);font-weight:700;letter-spacing:-.085em;line-height:.91;margin:25px 0}
+.hero p{font-size:14px;max-width:390px}
+.button-light{background:var(--acid);color:#171b17}
+.button-light:hover{background:#e5ff8b}
+.hero-stamp{position:absolute;z-index:2;right:11%;top:22%;width:126px;height:126px;border:1px solid rgba(213,243,106,.8);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--acid);transform:rotate(11deg)}
+.hero-stamp:before,.hero-stamp:after{content:"";position:absolute;inset:8px;border:1px solid rgba(213,243,106,.38);border-radius:50%}
+.hero-stamp:after{inset:-7px;border-style:dashed;opacity:.7}
+.hero-stamp span{font:800 34px var(--display);letter-spacing:-.08em}
+.hero-stamp small{font-size:7px;letter-spacing:.2em;margin-top:3px}
+.hero-vertical{color:var(--acid)}
+.motion-ticker{height:52px;overflow:hidden;background:var(--acid);color:#171b17;display:flex;align-items:center}
+.ticker-track{display:flex;align-items:center;gap:30px;white-space:nowrap;min-width:max-content;animation:nmTicker 34s linear infinite;font-size:10px;font-weight:800;letter-spacing:.16em}
+.ticker-track b{font-size:17px;font-weight:500}
+@keyframes nmTicker{to{transform:translateX(-33.333%)}}
+.section{padding-top:104px;padding-bottom:104px}
+.eyebrow{color:#627b32}
+.section-head h2,.editorial-copy h2,.membership-copy h1,.page-title{font-weight:650;letter-spacing:-.07em}
+.product-image-wrap{background:#e8eadf}
+.product-tag{background:var(--acid);color:#171b17;font-weight:800}
+.quick-add{background:#171b17;color:#f5f5ef;transition:background .2s,color .2s,transform .2s}
+.quick-add:hover{background:var(--acid);color:#171b17}
+.editorial{background:#e8eadf}
+.editorial-copy{position:relative}
+.editorial-copy:after{content:"NM / 01";position:absolute;right:9%;bottom:8%;font-size:8px;letter-spacing:.2em;color:#78836a}
+.category-tile{background:#171b17}
+.category-tile img{filter:brightness(.72) saturate(.8)}
+.category-tile span{font-weight:700}
+.quote-band{background:#d5f36a;color:#171b17}
+.quote-band small{font-weight:800}
+.button-dark{background:#171b17}
+.button-dark:hover{background:#52633a}
+.page-shell .eyebrow{color:#627b32}
+.filter-tabs button.active{border-bottom:2px solid #91b63b}
+.size-options button.selected{background:#171b17}
+.membership-hero{background:#e5e9dc}
+.membership-price{color:#171b17}
+.site-footer{background:#171b17}
+.consent-banner{border-top:4px solid var(--acid)}
+.toast{background:#171b17;border-left:4px solid var(--acid)}
+@media(max-width:850px){
+ .hero-stamp{right:7%;top:12%;width:92px;height:92px}
+ .hero-stamp span{font-size:26px}
+ .hero-content{left:7%;right:7%}
+}
+@media(max-width:560px){
+ .hero{height:590px}
+ .hero h1{font-size:clamp(49px,13vw,68px)}
+ .hero-stamp{right:8%;top:9%;width:76px;height:76px}
+ .hero-stamp span{font-size:22px}
+ .hero-stamp small{font-size:6px}
+ .motion-ticker{height:44px}
+ .section{padding-top:66px;padding-bottom:66px}
+ .ticker-track{font-size:9px;gap:22px}
+}
