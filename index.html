@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f2ed" />
+  <meta name="description" content="Nano Motion — premium performance apparel designed for movement." />
+  <title>Nano Motion — Designed for movement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    // Measurement starts denied until the visitor makes a choice.
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = [];
+      w.oaiq = q;
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    oaiq("consent", false);
+    oaiq("init", { pixelId: "JbChK6ZzAdxdCN9vy6PKWR", debug: true });
+  </script>
+</head>
+<body>
+  <div class="announcement">COMPLIMENTARY SHIPPING ON ORDERS OVER $125 <span>·</span> BUILT TO MOVE WITH YOU</div>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="Nano Motion home">NANO<span>·</span>MOTION</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/shop">Shop</a><a href="/shop?category=running">Running</a><a href="/shop?category=training">Training</a><a href="/membership">Membership</a>
+    </nav>
+    <div class="header-actions"><a class="text-link account-link" href="/membership">The Motion Club</a><a class="bag-link" href="/cart">Bag <span id="cart-count">0</span></a><button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button></div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav"><a href="/shop">Shop all</a><a href="/shop?category=running">Running</a><a href="/shop?category=training">Training</a><a href="/membership">Membership</a></nav>
+  <main id="app" aria-live="polite"></main>
+  <footer class="site-footer">
+    <div class="footer-top"><div><a class="wordmark footer-mark" href="/">NANO<span>·</span>MOTION</a><p>Move with intention.</p></div><div><h4>Explore</h4><a href="/shop">Shop all</a><a href="/membership">The Motion Club</a></div><div><h4>Support</h4><a href="mailto:hello@nanomotion.example">Contact</a><a href="/">Shipping & returns</a><button class="privacy-link" id="privacy-settings" type="button">Privacy preferences</button></div><div class="newsletter"><h4>Stay in motion</h4><p>New collections, thoughtful movement, and notes from our world.</p><form id="newsletter-form"><input type="email" placeholder="Email address" aria-label="Email address" required><button type="submit">Join <span>↗</span></button></form><small id="newsletter-message"></small></div></div>
+    <div class="footer-bottom"><span>© 2026 NANO MOTION</span><span>DESIGNED FOR MOVEMENT · MADE FOR EVERY DAY</span><span>PRIVACY&nbsp;&nbsp; TERMS</span></div>
+  </footer>
+  <div class="consent-banner" id="consent-banner" hidden><div><strong>Your privacy matters.</strong><p>We use measurement technologies to understand how visitors interact with Nano Motion and to measure advertising performance. You can accept or decline optional measurement.</p></div><div class="consent-actions"><button class="button button-outline" id="consent-reject">Decline</button><button class="button button-dark" id="consent-accept">Accept measurement</button></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
